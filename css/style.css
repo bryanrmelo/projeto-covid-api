@@ -7,3 +7,25 @@
     color:white;
     font-size: 20px;
 }
+
+#titulo h1{
+    font-size: 35px;
+    color: #4682B4;
+    text-align: center;
+}
+
+#inputPais{
+    min-width: 300px;
+}
+
+#imagem {
+    max-width:100%;
+	height:auto;
+}
+
+#top {
+   float: top;
+   width: 100%;
+   margin-top: -50px;
+    margin-bottom: 10px;
+}
