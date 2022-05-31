@@ -21,11 +21,26 @@
 #imagem {
     max-width:100%;
 	height:auto;
+    z-index: -1;
+    pointer-events: none;
+    display: flex;
+    position: absolute;
 }
 
 #top {
    float: top;
    width: 100%;
    margin-top: -50px;
-    margin-bottom: 10px;
+}
+
+.textocapa{
+    z-index: 2;
+    padding:250px 520px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    text-decoration: none;
+    color: black;
+    word-spacing: 2px;
+    letter-spacing: 1px;
+    margin-bottom: 150px;
 }
