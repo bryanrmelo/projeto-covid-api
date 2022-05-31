@@ -33,9 +33,19 @@
         </div>
     </nav>
 
-    <div class="container">
-        <input type="text" id="inputPais" placeholder="Digite uma data">
-        <button class="btn" onClick="handleOnClick()">Buscar</button>
-    </div>
-    <script src="../js/pais.js"></script>
+    <section id="top">
+        <img id="imagem" src="../img/calendario1.jpg" alt="">
+        <div class="textocapa">
+            <h1 style="color:white; background-color:#4682B4;padding:5px; text-align: center;">DATA</h1>
+        </div> <!-- me matarão por usar css inline perdão não consegui fazer de outra forma--> 
+    </section>
+    
+    <section class="container">
+        <div class="busca">
+            <input type="text" id="inputPais" placeholder="Digite um país">
+            <button class="btn" id="btn" onClick="handleOnClick()">Buscar</button>
+        </div>
+    </section>
+   
+    
 </body>
