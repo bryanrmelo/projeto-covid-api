@@ -1,6 +1,8 @@
 function handleOnClick() {
     const pais = document.getElementById("inputPais").value
     buscaPais(pais)
+    const data = document.getElementById("inputData").value
+    buscaData(datar)
 }
 
 function consultaWord(palavra) {
@@ -32,6 +34,18 @@ function buscaPais(pais) {
     })
     .catch ( (err) => console.log(err))
 }
+
+function buscaData(datar) {
+    fetch(`https://api.covid19api.com/country/${datar}`, {
+        method : "GET",
+    })
+    .then( (resp) => resp.json() )
+    .then( (data) => {
+        parseNearResponse(data)
+    })
+    .catch ( (err) => console.log(err))
+}
+
 
 function handleLimparOnClick() {
     document.getElementById("inputPalavra").value = ''

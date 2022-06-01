@@ -23,7 +23,7 @@
                         <a class="nav-link" href="pais.html">País</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Data</a>
+                        <a class="nav-link active" aria-current="page" href="#">Brasil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="dados.html">Dados</a>
@@ -34,16 +34,19 @@
     </nav>
 
     <section id="top">
-        <img id="imagem" src="../img/calendario1.jpg" alt="">
+        <img id="imagem" src="../img/covid1.jpg" alt="">
         <div class="textocapa">
-            <h1 style="color:white; background-color:#4682B490;padding:5px; text-align: center;">DATA</h1>
-        </div> <!-- me matarão por usar css inline perdão não consegui fazer de outra forma--> 
+            <h1 style="color:white; background-color:#4682B490;padding:5px; text-align: center;">Dados do Brasil</h1>
+        </div> 
     </section>
     
-    <section class="container">
-        <div class="busca">
-            <input type="text" id="inputPais" placeholder="Digite um país">
-            <button class="btn" id="btn" onClick="handleOnClick()">Buscar</button>
+
+    <section class="container">       
+        <div class="input-group">
+            <h1>Pesquise aqui uma data para conferir os dados de determinado dia no Brasil </h1>
+            <span class="input-group-text">Intervalo de datas</span>
+            <input type="text" aria-label="First name" placeholder="de" class="form-control">
+            <input type="text" aria-label="Last name" placeholder="até" class="form-control">
         </div>
     </section>
    
