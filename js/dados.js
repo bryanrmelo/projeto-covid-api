@@ -9,17 +9,32 @@ fetch(`https://api.covid19api.com/summary`, {
 
 
 function organizarData(data) {
-    console.log(data.Global)
+    //console.log(data.Global.NewConfirmed)
 
     var ul = document.getElementById('lista')
 
-    ul.innerHTML = '';
+    var liNovosConfirmados = document.createElement('li');
+    liNovosConfirmados.appendChild(document.createTextNode('Casos Novos Confirmados: ' + data.Global.NewConfirmed))
+    ul.appendChild(liNovosConfirmados);
+    
+    var liTotalConfirmados = document.createElement('li');
+    liTotalConfirmados.appendChild(document.createTextNode('Casos Totais Confirmados: ' + data.Global.TotalConfirmed))
+    ul.appendChild(liTotalConfirmados);
 
-    for (i = 0; i < data.Global.length; i++) {
-        var li = document.createElement('li')
-    }
+    var liNovasMortes = document.createElement('li');
+    liNovasMortes.appendChild(document.createTextNode('Novas Mortes: ' + data.Global.NewDeaths))
+    ul.appendChild(liNovasMortes);
 
-    ul.appendChild(li)
+    var liMortesTotais = document.createElement('li');
+    liMortesTotais.appendChild(document.createTextNode('Casos Totais Confirmados: ' + data.Global.TotalDeaths))
+    ul.appendChild(liMortesTotais);
+
+    var liData = document.createElement('li');
+    liData.appendChild(document.createTextNode('Data: ' + data.Global.Date))
+    ul.appendChild(liData);
+
+    console.log(ul)
+
 
 }
 /*
