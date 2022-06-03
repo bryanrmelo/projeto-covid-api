@@ -15,22 +15,27 @@ function organizarData(data) {
 
     var liNovosConfirmados = document.createElement('li');
     liNovosConfirmados.appendChild(document.createTextNode('Casos Novos Confirmados: ' + data.Global.NewConfirmed))
+    liNovosConfirmados.className = 'item';
     ul.appendChild(liNovosConfirmados);
     
     var liTotalConfirmados = document.createElement('li');
     liTotalConfirmados.appendChild(document.createTextNode('Casos Totais Confirmados: ' + data.Global.TotalConfirmed))
+    liTotalConfirmados.className = 'item';
     ul.appendChild(liTotalConfirmados);
 
     var liNovasMortes = document.createElement('li');
     liNovasMortes.appendChild(document.createTextNode('Novas Mortes: ' + data.Global.NewDeaths))
+    liNovasMortes.className = 'item'
     ul.appendChild(liNovasMortes);
 
     var liMortesTotais = document.createElement('li');
     liMortesTotais.appendChild(document.createTextNode('Casos Totais Confirmados: ' + data.Global.TotalDeaths))
+    liMortesTotais.className = 'item'
     ul.appendChild(liMortesTotais);
 
     var liData = document.createElement('li');
     liData.appendChild(document.createTextNode('Data: ' + data.Global.Date))
+    liData.className = 'item'
     ul.appendChild(liData);
 
     console.log(ul)
