@@ -1,3 +1,28 @@
+fetch(`https://api.covid19api.com/summary`, {
+        method: "GET",
+    })
+    .then((resp) => resp.json())
+    .then((data) => {
+        organizarData(data)
+    })
+    .catch((err) => console.log(err))
+
+
+function organizarData(data) {
+    console.log(data.Global)
+
+    var ul = document.getElementById('lista')
+
+    ul.innerHTML = '';
+
+    for (i = 0; i < data.Global.length; i++) {
+        var li = document.createElement('li')
+    }
+
+    ul.appendChild(li)
+
+}
+/*
 function handleOnClick() {
     const palavra = document.getElementById("inputPalavra").value
     consultaNear(palavra)
@@ -47,3 +72,4 @@ function handleLimparOnClick() {
     document.getElementById("nearResp").innerHTML = ''
     document.getElementById("wordResp").innerHTML = ''
 }
+*/
