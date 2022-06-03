@@ -9,87 +9,34 @@ fetch(`https://api.covid19api.com/summary`, {
 
 
 function organizarData(data) {
-    //console.log(data.Global.NewConfirmed)
-
     var ul = document.getElementById('lista')
 
     var liNovosConfirmados = document.createElement('li');
-    liNovosConfirmados.appendChild(document.createTextNode('Casos Novos Confirmados: ' + data.Global.NewConfirmed))
-    liNovosConfirmados.className = 'item';
+    liNovosConfirmados.appendChild(document.createTextNode('CASOS NOVOS: ' + data.Global.NewConfirmed.toLocaleString()))
+    liNovosConfirmados.className = 'list-group-item';
     ul.appendChild(liNovosConfirmados);
     
     var liTotalConfirmados = document.createElement('li');
-    liTotalConfirmados.appendChild(document.createTextNode('Casos Totais Confirmados: ' + data.Global.TotalConfirmed))
-    liTotalConfirmados.className = 'item';
+    liTotalConfirmados.appendChild(document.createTextNode('CASOS TOTAIS: ' + data.Global.TotalConfirmed.toLocaleString()))
+    liTotalConfirmados.className = 'list-group-item';
+    liTotalConfirmados.style.fontWeight = 'bold';
     ul.appendChild(liTotalConfirmados);
 
     var liNovasMortes = document.createElement('li');
-    liNovasMortes.appendChild(document.createTextNode('Novas Mortes: ' + data.Global.NewDeaths))
-    liNovasMortes.className = 'item'
+    liNovasMortes.appendChild(document.createTextNode('NOVAS MORTES: ' + data.Global.NewDeaths.toLocaleString()))
+    liNovasMortes.className = 'list-group-item'
     ul.appendChild(liNovasMortes);
 
     var liMortesTotais = document.createElement('li');
-    liMortesTotais.appendChild(document.createTextNode('Casos Totais Confirmados: ' + data.Global.TotalDeaths))
-    liMortesTotais.className = 'item'
+    liMortesTotais.appendChild(document.createTextNode('MORTES TOTAIS: ' + data.Global.TotalDeaths.toLocaleString()))
+    liMortesTotais.className = 'list-group-item'
+    liMortesTotais.style.fontWeight = 'bold';
     ul.appendChild(liMortesTotais);
-
-    var liData = document.createElement('li');
-    liData.appendChild(document.createTextNode('Data: ' + data.Global.Date))
-    liData.className = 'item'
-    ul.appendChild(liData);
-
-    console.log(ul)
-
+    
+    // var liData = document.createElement('li');
+    // var data = new Date(data.Global.Date)
+    // liData.appendChild(document.createTextNode(`Data : ${data.getDate()}/${data.getMonth()}/${data.getFullYear()}`))
+    // liData.className = 'list-group-item'
+    // ul.appendChild(liData);
 
 }
-/*
-function handleOnClick() {
-    const palavra = document.getElementById("inputPalavra").value
-    consultaNear(palavra)
-    consultaWord(palavra)
-}
-
-function consultaWord(palavra) {
-    fetch(`https://api.dicionario-aberto.net/word/${palavra}`, {
-        method : "GET",
-    })
-    .then( (resp) => resp.json() )
-    .then( (data) => {
-        parseWordResponse(data)                    
-    })
-    .catch ( (err) => console.log(err))
-}
-
-function parseWordResponse(data) {
-    var conteudo = '<strong>Definição:</strong><br>'
-        data.map ( (def) => (
-            conteudo += def.xml + '<br><br>'
-        ))
-        document.getElementById("wordResp").innerHTML = conteudo
-}
-
-function consultaNear(palavra) {
-    fetch(`https://api.dicionario-aberto.net/near/${palavra}`, {
-        method : "GET",
-    })
-    .then( (resp) => resp.json() )
-    .then( (data) => {
-        parseNearResponse(data)
-    })
-    .catch ( (err) => console.log(err))
-}
-
-function parseNearResponse(data) {
-    var conteudo = '<strong>Palavras próximas:</strong> '
-    data.map( (palavra) => (
-        conteudo += palavra + ", "
-    ))
-    document.getElementById("nearResp").innerHTML = conteudo
-}
-
-function handleLimparOnClick() {
-    document.getElementById("inputPalavra").value = ''
-    document.getElementById("nearResp").innerHTML = ''
-    document.getElementById("wordResp").innerHTML = ''
-}
-*/
